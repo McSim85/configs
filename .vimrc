@@ -1,35 +1,35 @@
-" set VIM to use all VIM features (no only VI)
+" set VIM to use all VIM features (no only VI) - Required for Vundle.
 set nocompatible
 " set VIM to use undo-file
 set undofile
 " disable VIM filetype detection - 
-"filetype off                  " required
+"filetype off                  " required for Vundle.
 "
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jnurmine/Zenburn'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
+"Plugin 'gmarik/Vundle.vim'
+"Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'jnurmine/Zenburn'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'tpope/vim-commentary'
+"Plugin 'tpope/vim-repeat'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on
+"call vundle#end()            " required
+"filetype plugin indent on
 
 " Ignore case in search
 set ignorecase
