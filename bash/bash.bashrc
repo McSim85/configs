@@ -56,9 +56,7 @@ safe_term=${TERM//[^[:alnum:]]/?}   # sanitize TERM
 match_lhs="" 
 [[ -f ~/.dir_colors   ]] && match_lhs="${match_lhs}$(<~/.dir_colors)" 
 [[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)" 
-[[ -z ${match_lhs}    ]] \ 
-        && type -P dircolors >/dev/null \ 
-        && match_lhs=$(dircolors --print-database) 
+[[ -z ${match_lhs}    ]] && type -P dircolors >/dev/null && match_lhs=$(dircolors --print-database) 
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true 
 
 if ${use_color} ; then 
