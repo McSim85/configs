@@ -12,4 +12,5 @@ Thumbs.db
 *.swp
 #  ("**") in patterns matched against full pathname, include "/"
 **/view/**
+**/.vim/bundle/**/.git/**
 .viminfo
