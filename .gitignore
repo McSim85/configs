@@ -10,5 +10,6 @@ Thumbs.db
 # #######################
 *.un~
 *.swp
-*.vim/view/*
+#  ("**") in patterns matched against full pathname, include "/"
+**/view/**
 .viminfo
