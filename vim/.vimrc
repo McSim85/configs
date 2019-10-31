@@ -6,8 +6,9 @@ set undofile
 set nocompatible
 
 " disable VIM filetype detection - 
-"filetype off                  " required for Vundle
+filetype off                  " required for Vundle
 "
+"filetype plugin indent on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -18,7 +19,8 @@ call vundle#begin()
 
 """ All plugins below, will install from GIthub
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 " This indentation script for python tries to match more closely what is suggested in PEP 8 (http://www.python.org/peps/pep-0008.html).
 " In particular, it handles continuation lines implied by open (parentheses), 
 " [brackets] and {braces} correctly and it indents multiline if/for/while statements differently. 
@@ -39,13 +41,18 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 " Repeat commands
 Plugin 'tpope/vim-repeat'
-
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+Plugin 'pangloss/vim-javascript'
+" A very fast, multi-syntax context-sensitive color name highlighter
+Plugin 'ap/vim-css-color'
+" Vim syntax highlighting for Vue components.
+Plugin 'posva/vim-vue'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
-filetype plugin indent on
+filetype plugin on
 ""STOP Vundle
 
 " Ignore case in search
@@ -85,10 +92,14 @@ let g:SimpylFold_docstring_preview=1
 nnoremap <space> za
 
 
-"Save fold
+"Save fold and position of opened files and then open same file in the same
+"position
+"https://vim.fandom.com/wiki/Make_views_automatic
+"https://vimhelp.org/usr_21.txt.html#21.5
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
-
+"Dont save options (use only options from .vimrc) https://vimhelp.org/options.txt.html#%27viewoptions%27
+set viewoptions-=options
 
 set t_Co=256
 
@@ -98,15 +109,15 @@ set fileformat=unix
 set ruler
 
 " python - style tabs
-set sts=4 " softtabstop - Number of spaces that a <Tab> counts
-set ts=4  " tabstop - Number of spaces that a <Tab> in the file counts for.
-set sw=4  " shiftwidth - Number of spaces to use for each step of (auto)indent.
+"set sts=4 " softtabstop - Number of spaces that a <Tab> counts
+"set ts=4  " tabstop - Number of spaces that a <Tab> in the file counts for.
+"set sw=4  " shiftwidth - Number of spaces to use for each step of (auto)indent.
 set et    " expandtab - In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 set ai    " autoindent - Copy indent from current line when starting a new line 
 syn on    " syntax highlighting on according to the current value of the 'filetype' option
 "colorscheme desert
 colorscheme zenburn
-filetype indent on
+"filetype indent on
 " https://vim.fandom.com/wiki/Toggle_auto-indenting_for_code_paste
 set pastetoggle=<F2>
 
@@ -128,6 +139,9 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
 "to exit back to normal mode
 inoremap jj <ESC>
+
+autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab|set sts=4
 
 
 " Use the below highlight group when displaying bad whitespace is desired.

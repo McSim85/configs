@@ -1,7 +1,5 @@
 # OS generated files #
 # ######################
-.DS_Store
-.DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
@@ -11,6 +9,6 @@ Thumbs.db
 # Vim undo files. Python#
 # #######################
 *.un~
-*.pyc
 *.swp
-.cache/
+*.vim/view/*
+.viminfo
