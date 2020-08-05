@@ -159,3 +159,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 nmap <C-\> :NERDTreeFind<CR>
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
+" Python PEP8 https://www.python.org/dev/peps/pep-0008/#maximum-line-length
+" http://vimdoc.sourceforge.net/htmldoc/options.html#'textwidth'
+set textwidth=72 				" max width for comments
+set colorcolumn=+1,+8 	" higlight 73 and 80 column
